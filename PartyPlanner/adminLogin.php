@@ -1,31 +1,30 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title> Login Page - PartyPlanner.com</title>
+		<title> Admin Login - PartyPlanner.com</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
 		<div class="header">
 			<h2>Login</h2>
 		</div>
-		<form method="post" action="login.php">
+		<form method="post" action="">
 		
 			<?php //echo display_error(); ?>
 			
 			<div class="input-group">
-				<label> Username </label>
-				<input type="text" name="username">
+				<label> Admin Username </label>
+				<input type="text" name="adminName">
 			</div>
 			<div class="input-group">
-				<label> Password </label>
-				<input type="password" name="password">
+				<label> Admin Password </label>
+				<input type="password" name="adminpw">
 			</div>
 			<div class="input-group">
 				<button type="submit" class="btn" name="submit"> Login </button>
 				<button type="reset" class="btn" name="cancel_btn"> Cancel </button>
 			</div>
-			<p> Don't have an account? Create one <a href="register.php">Sign up</a></p>
-            <p> <a href="adminLogin.php"> Click Here for Admin Login </a> </p>
+            <p> Go back to <a href="login.php"> User Login </a> </p>
 		</form>
 	</body>
 </html>
@@ -44,20 +43,20 @@
     }*/
     
     if (isset($_POST['submit'])) {
-        $username = mysqli_real_escape_string($connection, $_POST['username']);
-        $password = mysqli_real_escape_string($connection, $_POST['password']);
+        $adminName = mysqli_real_escape_string($connection, $_POST['adminName']);
+        $adminpw = mysqli_real_escape_string($connection, $_POST['adminpw']);
         
-        $s = "SELECT * FROM registration WHERE username ='$username' and password='$password';";
+        $s = "SELECT * FROM admins WHERE adminName ='$adminName' and adminpw='$adminpw';";
         
         $result = mysqli_query($connection, $s);
 
         $num = mysqli_num_rows($result);
         if(mysqli_num_rows($result)==1){
-            header("Location: register.php");
+            header("Location: pricing.html");
         }
         else {
         echo '<script language="javascript">';
-        echo 'alert("Your Login ID or Password is invalid")';
+        echo 'alert("Your Admin Login username or Password is invalid")';
 		echo '</script>';  
         }
     } 

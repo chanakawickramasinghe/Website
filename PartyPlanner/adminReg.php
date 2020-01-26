@@ -17,8 +17,8 @@
 				<input type="text" name="name" placeholder="Your name">
 			</div>
 			<div class="input-group">
-				<label>Username</label>
-				<input type="text" name="username" placeholder="Your Username">
+				<label>Admin Username</label>
+				<input type="text" name="adminName" placeholder="Your Username">
 			</div>
 			<div class="input-group">
 				<label>Email</label>
@@ -26,7 +26,7 @@
 			</div>
 			<div class="input-group">
 				<label>Password</label>
-				<input type="password" name="password" placeholder="Your Password">
+				<input type="password" name="adminpw" placeholder="Your Password">
 			</div>
 			<div class="input-group">
 				<label>Address</label>
@@ -40,7 +40,6 @@
 				<button type="submit" class="btn" name="submit">Register</button>
 				<button type="reset" class="btn" name="cancel_btn"> Cancel </button>
 			</div>
-			<p> Already registered? <a href="login.php"> Login </a> </p>
 		</form>
 	</body>
 </html>
@@ -49,28 +48,28 @@
 
 if(isset($_POST['submit'])) {
     $name = $_POST["name"];
-    $username = $_POST["username"];
+    $adminName = $_POST["adminName"];
     $email = $_POST["email"];
-    $password = $_POST["password"];
+    $adminpw = $_POST["adminpw"];
     $address = $_POST["address"];
     $tp = $_POST["tp"];   
 
-    $s = "SELECT * FROM registration WHERE username='$username';";
+    $s = "SELECT * FROM admins WHERE adminName='adminName';";
 
     $result = mysqli_query($connection, $s);
 
     $num = mysqli_num_rows($result);
     
-    $reg="INSERT INTO registration(name, username, email, password, address, tp) VALUES ('".$_POST['name']."','".$_POST['username']."','".$_POST['email']."','".$_POST['password']."','".$_POST['address']."','".$_POST['tp']."');";
+    $reg="INSERT INTO admins(name, adminName, email, adminpw, address, tp) VALUES ('".$_POST['name']."','".$_POST['adminName']."','".$_POST['email']."','".$_POST['adminpw']."','".$_POST['address']."','".$_POST['tp']."');";
     
         if(mysqli_query($connection , $reg) === TRUE) {
             $message = base64_encode(urlencode("Successfully Registered"));
-            header('Location:login.php?msg=' . $message);
+            header('Location:adminLogin.php?msg=' . $message);
             exit(); 
         }
         else{
             $message = base64_encode(urlencode("SQL Error while Registering"));
-            header('Location:login.php?msg=' . $message);
+            header('Location:adminReg.php?msg=' . $message);
             exit();
         }
 }

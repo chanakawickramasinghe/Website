@@ -1,8 +1,11 @@
 * { margin: 0px; padding: 0px; }
 body {
 	font-size: 120%;
-	background-image: url("images/works/back4.jpg");*/
+	background-image: url("images/background/a9.jpg");
 	margin: 50px;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:cover;
 }
 .header {
 	width: 25%;
@@ -80,7 +83,7 @@ input.text {
 }
 
 .input-group-cd {
-    margin: 10px 0px 10px 0px;
+    
 }
 
 .input-group-cd label{
@@ -90,12 +93,26 @@ input.text {
 }
 
 .input-group-cd input {
+     
 	height: 25px;
 	width: 96%;
-	padding: 5px 10px;
 	font-size: 16px;
 	border-radius: 5px;
 	border: 1px solid gray;
+    margin-left: 50px;
+    margin-bottom: 10px;
+    padding-left: 5px;
+}
+.input-group-cd select {
+     
+	height: 25px;
+	width: 96%;
+	font-size: 16px;
+	border-radius: 5px;
+	border: 1px solid gray;
+    margin-left: 50px;
+    margin-bottom: 10px;
+    padding-left: 5px;
 }
 
 .input-group-cd text{
