@@ -4,13 +4,28 @@
     <head>
 		<meta charset="utf-8">
 		<title> ContactUS - PartyPlanner.com </title>
-		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/nav.css">
+        <script  src="javascript/contact.js"></script>
     </head>
     <body>
+        <nav>
+                <label class="logo">Party Planner</label>
+                <ul>
+                     <li><a href="home.html">Home</a></li>
+					<li><a href="HowItWorks.html">HowItWorks</a></li>
+					<li><a href="Pricing.html">Pricing</a></li>
+					<li><a href="event_form.php">Event Form</a></li>
+					<li><a href="contact.php">contact</a></li>
+                    <li> <a href="login.php"> Logout</a></li>
+                   
+                </ul>
+        </nav>
+        <br>
         <div class="header">
 			<h2>Contact Us</h2>
 		</div>
-        <form method="post">
+        <form method="POST" name="form" onSubmit="return checkForm()">
 			<p>Have ideas or concerns you want to share with us? Something we can improve? Please send us your feedback.We appreciate your helping us make PartyPlanner the very best it can be. Thank you!
 			</p> <br>
         
@@ -24,7 +39,7 @@
 		</div>
 		<div class="input-group">
 			<label> Your message<font color="red">*</font> </label>
-			<input type="text" name="message" size="250" height="50" required>
+			<input type="text" name="message" size="250" height="50">
 		</div>
 		<div class="input-group">
 			<button type="submit" class="btn" name="submit">Send</button>
@@ -50,14 +65,16 @@ if(isset($_POST['submit'])) {
     
     $reg="INSERT INTO messages(yname, email, message) VALUES ('".$_POST['yname']."','".$_POST['email']."','".$_POST['message']."');";
     
+    
         if(mysqli_query($connection , $reg) === TRUE) {
-            $message = base64_encode(urlencode("Successfully Send message"));
-            header('Location:contact.php?msg=' . $message);
+            echo '<script language="text/javascript">';
+echo 'alert("message successfully sent")';
+echo '</script>';
+            header('Location:contact.php');
             exit(); 
         }
         else{
-            $message = base64_encode(urlencode("Error"));
-            header('Location:contact.php?msg=' . $message);
+            header('Location:contact.php');
             exit();
         }
     

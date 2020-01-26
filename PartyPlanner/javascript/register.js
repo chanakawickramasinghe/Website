@@ -1,4 +1,4 @@
-<!--
+
 
  function checkForm() 
  
@@ -13,13 +13,19 @@
  return false;
  }
  
- if (document.form.password_1.value==""){
+ if (document.form.password.value==""){
  alert("please input your password.");
  return false;
  }
+
  
- if (document.form.password_2.value==""){
- alert("please input your password again to confirm.");
+ if (document.form.address.value==""){
+ alert("please input your Address");
+ return false;
+ }
+
+if (document.form.tp.value==""){
+ alert("please input your telephone Number");
  return false;
  }
  
@@ -28,5 +34,5 @@
  
  
  }
- //-->
+ 
  

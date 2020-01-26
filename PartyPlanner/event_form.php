@@ -4,8 +4,10 @@
 	<head>
 	
 		<title> Event Form - PartyPlanner.com</title>
-		<script  src="javascript/customer_details.js"></script>
-		<link rel="stylesheet" href="style.css">
+		<script  src="javascript/eventform.js"></script>
+		<link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/nav.css">
+        
 	</head>
 	
 	<style>
@@ -19,11 +21,24 @@
 	
 	
 	<body>
+        <nav>
+                <label class="logo">Party Planner</label>
+                <ul>
+                     <li><a href="home.html">Home</a></li>
+					<li><a href="HowItWorks.html">HowItWorks</a></li>
+					<li><a href="Pricing.html">Pricing</a></li>
+					<li><a href="event_form.php">Event Form</a></li>
+					<li><a href="contact.php">contact</a></li>
+                    <li> <a href="login.php"> Logout</a></li>
+                   
+                </ul>
+        </nav>
+        <br>
 		<div class="header">
 			<h2> Event Form </h2>
 		</div>
 	
-		<form method="POST" action ='' onSubmit="return checkForm()">
+		<form method="POST" action ='' name="form" onSubmit="return checkForm()">
 
 		
 		<table>

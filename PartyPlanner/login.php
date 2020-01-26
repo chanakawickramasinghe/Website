@@ -8,10 +8,10 @@
       $result = $connection->query($sql);
       if ($result->num_rows == 1) {
         $_SESSION['login'] = true;
-        header("Location: pricing.html");
+        header("Location: AdminPages/adminHome.php");
       }
       else {
-        echo "<script>alert('User does not exist');</script>";
+        echo "<script>alert('Password Not Valid');</script>";
       }
     }
     else{
@@ -19,7 +19,7 @@
       $result = $connection->query($sql);
       if ($result->num_rows == 1) {
         $_SESSION['login'] = true;
-        header("Location: event_form.php");
+        header("Location: home.html");
       }
       else {
         echo "<script>alert('User does not exist');</script>";
@@ -34,14 +34,15 @@
 	<head>
 		<meta charset="utf-8">
 		<title> Login Page - PartyPlanner.com</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+        <script  src="javascript/login.js"></script>
+
 	</head>
 	<body>
 		<div class="header">
 			<h2>Login</h2>
 		</div>
-		<form method="post" action="login.php">
-		
+		<form action='' method="POST" name="form" onSubmit="return checkForm()">
 			<?php //echo display_error(); ?>
 			
 			<div class="input-group">

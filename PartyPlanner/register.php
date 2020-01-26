@@ -5,13 +5,14 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Sign up - PartyPlanner.com </title>
-		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="css/style.css">
+        <script  src="javascript/register.js"></script>
 	</head>
 	<body>
 		<div class="header">
 			<h2> Register </h2>
 		</div>
-		<form action='' method="POST">
+		<form action='' method="POST" name="form" onSubmit="return checkForm()">
 			<div class="input-group">
 				<label>Full Name</label>
 				<input type="text" name="name" placeholder="Your name">

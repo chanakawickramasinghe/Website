@@ -1,19 +1,14 @@
-* { margin: 0px; padding: 1px }
-
+* { margin: 0px; padding: 0.5px }
 body {
 	font-size: 120%;
-	background-image: url("../images/background/a1.jpg");
-/*    margin: 170px;*/
-
-/*    background-position:center;*/
+	background-image: url("../images/background/a9.jpg");
+	margin: 10px;
+    background-position:center;
     background-repeat:no-repeat;
     background-size:cover;
     margin-left: 25px;
     margin-right: 25px;
-
-
 }
-
 .header {
 	width: 25%;
 	margin: 0px auto 0px;
@@ -28,7 +23,7 @@ body {
 }
 
 form, .content {
-	width: 75%;
+	width: 50%;
 	margin: 0px auto;
 	text-align: center;
 	padding: 20px;
@@ -38,15 +33,27 @@ form, .content {
     opacity: 0.74;
 }
 
-.table_top{
-    background-color: white;
-    font-family: "sans-serif";
-    color: black;
-    border-radius: 5px;
+label {
+	font-family: sans-serif;
+	font-size: 15px;
+	font-weight: bold;
 }
 
-.tab{
-    align-content: center
-	align:center;
-	padding:10px 10px;
+
+.btn {
+	text-align: center;
+	margin: 0px auto 0px;
+	padding: 10px;
+	font-size: 15px;
+	color: white;
+	background: #5F9EA0;
+	border: none;
+	border-radius: 5px; 
+}
+
+.table_top{
+    background-color: white;
+    font-family: "Trebuchet MS";
+    color: black;
+    border-radius: 5px;
 }
