@@ -61,7 +61,7 @@ if(isset($_POST['submit'])) {
 
     $num = mysqli_num_rows($result);
     
-    $reg="INSERT INTO registration(name, username, email, password, address, tp) VALUES ('".$_POST['name']."','".$_POST['username']."','".$_POST['email']."','".$_POST['password']."','".$_POST['address']."','".$_POST['tp']."');";
+    $reg="INSERT INTO registration(name, username, email, password, address, tp) VALUES ('".$_POST['name']."','".$_POST['username']."','".$_POST['email']."','".md5($_POST['password'])."','".$_POST['address']."','".$_POST['tp']."');";
     
         if(mysqli_query($connection , $reg) === TRUE) {
             $message = base64_encode(urlencode("Successfully Registered"));

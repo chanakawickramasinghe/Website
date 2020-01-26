@@ -179,7 +179,16 @@ if(isset($_POST['submit'])) {
     
     $reg="INSERT INTO events(event_name, event_type, package, venue, date, start_time, end_time, num) VALUES('".$_POST['event_name']."','".$_POST['event_type']."','".$_POST['package']."','".$_POST['venue']."','".$_POST['date']."','".$_POST['start_time']."','".$_POST['end_time']."','".$_POST['num']."');";
     
-    header('Location:event_form.php?msg=' . $message);
+    if(mysqli_query($connection , $reg) === TRUE) {
+            $message = base64_encode(urlencode("Successfully Send message"));
+            header('Location:event_form.php?msg=' . $message);
+            exit(); 
+        }
+        else{
+            $message = base64_encode(urlencode("Error"));
+            header('Location:contact.php?msg=' . $message);
+            exit();
+        }
 }
 
 mysqli_close($connection);

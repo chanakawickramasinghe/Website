@@ -1,3 +1,35 @@
+<?php require_once("connect.php"); ?>
+<?php 
+  session_start();
+
+  if (isset($_POST['submit'])) {
+    if($_POST['username']=="ucsc"){
+      $sql = "SELECT * FROM registration WHERE username = '{$_POST['username']}' AND password = '" . md5($_POST['password']) . "';";
+      $result = $connection->query($sql);
+      if ($result->num_rows == 1) {
+        $_SESSION['login'] = true;
+        header("Location: pricing.html");
+      }
+      else {
+        echo "<script>alert('User does not exist');</script>";
+      }
+    }
+    else{
+      $sql = "SELECT * FROM registration WHERE username = '{$_POST['username']}' AND password = '" . md5($_POST['password']) . "';";
+      $result = $connection->query($sql);
+      if ($result->num_rows == 1) {
+        $_SESSION['login'] = true;
+        header("Location: event_form.php");
+      }
+      else {
+        echo "<script>alert('User does not exist');</script>";
+      }
+    }
+    
+  }
+ ?>
+
+
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -25,40 +57,8 @@
 				<button type="reset" class="btn" name="cancel_btn"> Cancel </button>
 			</div>
 			<p> Don't have an account? Create one <a href="register.php">Sign up</a></p>
-            <p> <a href="adminLogin.php"> Click Here for Admin Login </a> </p>
+            <!--<p> <a href="adminLogin.php"> Click Here for Admin Login </a> </p>-->
 		</form>
 	</body>
 </html>
-		
 
-
-<?php 
-    require_once('connect.php');
-    session_start();
-    /*if(isset($_SESSION['username'])) {
-        if($_SESSION['userType'] == 'admin') {
-            header("Location: ../html/signup.php");
-        } else {
-            header();
-        }
-    }*/
-    
-    if (isset($_POST['submit'])) {
-        $username = mysqli_real_escape_string($connection, $_POST['username']);
-        $password = mysqli_real_escape_string($connection, $_POST['password']);
-        
-        $s = "SELECT * FROM registration WHERE username ='$username' and password='$password';";
-        
-        $result = mysqli_query($connection, $s);
-
-        $num = mysqli_num_rows($result);
-        if(mysqli_num_rows($result)==1){
-            header("Location: register.php");
-        }
-        else {
-        echo '<script language="javascript">';
-        echo 'alert("Your Login ID or Password is invalid")';
-		echo '</script>';  
-        }
-    } 
-?>
