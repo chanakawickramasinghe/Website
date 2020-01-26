@@ -1,0 +1,163 @@
+<html>
+	<head>
+	
+		<title> Customer details - PartyPlanner.com</title>
+		<script  src="javascript/customer_details.js"></script>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	
+	<style>
+	
+	h1{
+			color:white;
+	  }
+	
+	
+	</style>
+	
+	
+	<body>
+		<div class="header">
+			<h2>Customer Details</h2>
+		</div>
+	
+		<form action ="flm.cgi" name="form" onSubmit="return checkForm()">
+
+		
+		<table>
+		  <tr>
+			<td>
+                <label>Name of the Event</label></td>
+				
+				
+              <td>
+				<div class="input-group-cd">
+                <input type="text" name="event_name" placeholder="Your preferred event name">
+				</div>
+             </td>
+				
+				
+				
+		    </tr>
+			
+			<tr>
+                <td>
+                    <label>Event Type</label>
+                </td>
+                <td>
+                    <div class="input-group-cd">
+				    <select name="event_type">
+					<option disabled selected value> -- Select an Option -- </option>
+					<option>Wedding Ceremonies</option>
+					<option>Birthday Parties</option>
+					<option>Graduation Parties</option>
+				    </select>
+			</div>
+                </td>
+            </tr>
+				
+             <tr>   
+				<td>
+					<div class="input-group-cd">
+					<label>Package</label>
+				</td>
+				
+				<td>
+				<select name="package">
+					<option disabled selected value> -- Select an Option -- </option>
+					<option>The Wish Planning Package</option>
+					<option>The Dream Planning Package</option>
+					<option>The Birthday Bash Package</option>
+					<option>The Booming Joy Package</option>
+					<option>The Celebration of Success Package</option>
+					<option>the Graduated Package</option>
+					<option></option>
+				</select>	
+				</div>
+				</td>
+				
+			<tr>
+				<td>
+					<div class="input-group-cd">
+					<label>Venue</label>
+				</td>
+				
+				<td>
+					<input type="text" name="venue">
+					</div>
+				</td>
+				
+			<tr>
+				<td>	
+					<div class="input-group-cd">
+					<label>Date</label>
+				</td>
+				
+				<td>
+					<input type="date" name="date">
+					</div>
+				</td>
+				
+			<tr>
+				<td>
+					<div class="input-group-cd">
+					<label>Start-Time</label>
+				</td>
+				
+				<td>
+					<input type="time" name="start_time">
+					</div>
+				</td>
+				
+			<tr>
+				<td>
+					<div class="input-group-cd">
+					<label>End-Time</label>
+				</td>
+				
+				<td>
+					<input type="time" name="end_time">
+					</div>
+				</td>
+				
+			<tr>
+				<td>
+					<div class="input-group-cd">
+					<label>No of Participants</label>
+				</td>
+				
+				<td>
+					<input type="number" name="num">
+					</div>
+				</td>
+				
+			<tr>
+
+				<td>
+				</td>
+				
+				<td>
+					<div class="input-group">
+					<button type="submit" class="btn" name="register_btn">Register</button>
+					&nbsp;&nbsp;
+					<button type="reset" class="btn" name="cancel_btn"> Cancel </button>
+					</div>
+				</td>
+				
+				
+			
+
+	</form>
+	</body>
+			
+</html>
+			
+			
+			
+			
+			
+			
+			
+			
+		
+	
