@@ -63,7 +63,7 @@
                 <td>
                     <div class="input-group-cd">
 				    <select name="event_type">
-					<option disabled selected value> -- Select an Option -- </option>
+					<option disabled selected value> -- Select Event Type -- </option>
 					<option>Wedding Ceremonies</option>
 					<option>Birthday Parties</option>
 					<option>Graduation Parties</option>
@@ -80,7 +80,7 @@
 				<td>
                 <div class="input-group-cd">
 				<select name="package">
-					<option disabled selected value> -- Select an Option -- </option>
+					<option disabled selected value> -- Select the Package -- </option>
 					<option>The Wish Planning Package</option>
 					<option>The Dream Planning Package</option>
 					<option>The Birthday Bash Package</option>
@@ -101,7 +101,7 @@
 				
 				<td>
                     <div class="input-group-cd">
-					<input type="text" name="venue">
+					<input type="text" name="venue" placeholder="Enter Your Venue">
 					</div>
 				</td>
 				
@@ -149,7 +149,7 @@
 				
 				<td>
                     <div class="input-group-cd">
-					<input type="number" name="num">
+					<input type="number" name="num" placeholder="Enter number of Participants">
 					</div>
 				</td>
 				
@@ -184,8 +184,6 @@ if(isset($_POST['submit'])) {
     $end_time = $_POST["end_time"];
     $num = $_POST["num"];
     
-    echo "hehubhvehbv";
-    
     $s = "SELECT * FROM events";
 
     $result = mysqli_query($connection, $s);
@@ -195,13 +193,13 @@ if(isset($_POST['submit'])) {
     $reg="INSERT INTO events(event_name, event_type, package, venue, date, start_time, end_time, num) VALUES('".$_POST['event_name']."','".$_POST['event_type']."','".$_POST['package']."','".$_POST['venue']."','".$_POST['date']."','".$_POST['start_time']."','".$_POST['end_time']."','".$_POST['num']."');";
     
     if(mysqli_query($connection , $reg) === TRUE) {
-            $message = base64_encode(urlencode("Successfully Send message"));
-            header('Location:event_form.php?msg=' . $message);
+            echo "<script>alert('Event details sent, Our agent will contact you within a short time.');</script>";
+            header('Location:contact.php');
             exit(); 
         }
         else{
-            $message = base64_encode(urlencode("Error"));
-            header('Location:contact.php?msg=' . $message);
+            echo "<script>alert('Send failed, please retry.');</script>";
+            header('Location:contact.php');
             exit();
         }
 }

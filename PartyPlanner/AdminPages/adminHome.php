@@ -2,7 +2,7 @@
 <head>
         <meta charset="utf-8">
 		<title> ContactUS - PartyPlanner.com </title>
-		<link rel="stylesheet" href="../css/admin.css">
+        <link rel="stylesheet" href="../css/view.css">
         <link rel="stylesheet" href="../css/nav.css">
 </head>
 
@@ -18,5 +18,4 @@
                    
                 </ul>
 </nav>
- 
 </body

@@ -47,11 +47,11 @@
 			
 			<div class="input-group">
 				<label> Username </label>
-				<input type="text" name="username">
+				<input type="text" name="username" placeholder="Enter Your Username">
 			</div>
 			<div class="input-group">
 				<label> Password </label>
-				<input type="password" name="password">
+				<input type="password" name="password" placeholder="Enter Your Password">
 			</div>
 			<div class="input-group">
 				<button type="submit" class="btn" name="submit"> Login </button>

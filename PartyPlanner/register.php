@@ -49,12 +49,12 @@
 <?php
 
 if(isset($_POST['submit'])) {
-    $name = $_POST["name"];
+//    $name = $_POST["name"];
     $username = $_POST["username"];
-    $email = $_POST["email"];
-    $password = $_POST["password"];
-    $address = $_POST["address"];
-    $tp = $_POST["tp"];   
+//    $email = $_POST["email"];
+//    $password = $_POST["password"];
+//    $address = $_POST["address"];
+//    $tp = $_POST["tp"];   
 
     $s = "SELECT * FROM registration WHERE username='$username';";
 
@@ -62,11 +62,16 @@ if(isset($_POST['submit'])) {
 
     $num = mysqli_num_rows($result);
     
+    if($num >= 1){
+         echo "<script>alert('Username is taken, please enter another username');</script>";
+    }
+    else{
+    
     $reg="INSERT INTO registration(name, username, email, password, address, tp) VALUES ('".$_POST['name']."','".$_POST['username']."','".$_POST['email']."','".md5($_POST['password'])."','".$_POST['address']."','".$_POST['tp']."');";
     
         if(mysqli_query($connection , $reg) === TRUE) {
-            $message = base64_encode(urlencode("Successfully Registered"));
-            header('Location:login.php?msg=' . $message);
+            echo "<script>alert('Successfully Registered');</script>";
+            header('Location:login.php');
             exit(); 
         }
         else{
@@ -74,6 +79,7 @@ if(isset($_POST['submit'])) {
             header('Location:login.php?msg=' . $message);
             exit();
         }
+    }
 }
 
 mysqli_close($connection);

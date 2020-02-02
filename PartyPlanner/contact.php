@@ -31,15 +31,15 @@
         
         <div class="input-group">
 			<label> Your name </label>
-			<input type="text" name="yname" size="55">
+			<input type="text" name="yname" size="55" placeholder="Enter Your Name" >
 		</div>
 		<div class="input-group">
 			<label> Your Email </label>
-			<input type="email" name="email" size="55">
+			<input type="email" name="email" size="55"  placeholder="Enter Your Email">
 		</div>
 		<div class="input-group">
 			<label> Your message<font color="red">*</font> </label>
-			<input type="text" name="message" size="250" height="50">
+			<input type="text" name="message" size="250" height="50"  placeholder="Enter Your Message">
 		</div>
 		<div class="input-group">
 			<button type="submit" class="btn" name="submit">Send</button>
@@ -53,9 +53,9 @@
 <?php
 
 if(isset($_POST['submit'])) {
-    $yname = $_POST["yname"];
-    $email = $_POST["email"];
-    $message = $_POST["message"];  
+//    $yname = $_POST["yname"];
+//    $email = $_POST["email"];
+//    $message = $_POST["message"];  
 
     $s = "SELECT * FROM messages";
 
@@ -67,13 +67,14 @@ if(isset($_POST['submit'])) {
     
     
         if(mysqli_query($connection , $reg) === TRUE) {
-            echo '<script language="text/javascript">';
-echo 'alert("message successfully sent")';
-echo '</script>';
+            echo "<script>alert('Message Sent Successfully');</script>";
             header('Location:contact.php');
             exit(); 
         }
         else{
+            echo '<script language="text/javascript">';
+            echo 'alert("Message Sent Failed")';
+            echo '</script>';
             header('Location:contact.php');
             exit();
         }
