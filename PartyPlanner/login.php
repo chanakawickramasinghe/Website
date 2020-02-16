@@ -7,7 +7,7 @@
       $sql = "SELECT * FROM registration WHERE username = '{$_POST['username']}' AND password = '" . md5($_POST['password']) . "';";
       $result = $connection->query($sql);
       if ($result->num_rows == 1) {
-        $_SESSION['login'] = true;
+        $_SESSION['logged_in'] = true;
         header("Location: AdminPages/adminHome.php");
       }
       else {
@@ -18,11 +18,15 @@
       $sql = "SELECT * FROM registration WHERE username = '{$_POST['username']}' AND password = '" . md5($_POST['password']) . "';";
       $result = $connection->query($sql);
       if ($result->num_rows == 1) {
-        $_SESSION['login'] = true;
-        header("Location: home.html");
+        $_SESSION['logged_in'] = true;
+        while($userRow = mysqli_fetch_assoc($result)){
+            $_SESSION["username"] = $userRow['username'];
+        }
+        
+        header("Location: home.php");
       }
       else {
-        echo "<script>alert('User does not exist');</script>";
+        echo "<script>alert('Username and Password does not match');</script>";
       }
     }
     

@@ -1,5 +1,17 @@
 <?php require_once('connect.php'); ?>
-<?php include('session.php') ?>
+<?php
+session_start();
+if (! empty($_SESSION['logged_in']))
+{
+}
+else
+{
+    
+//    echo "<script>alert('Please login to continue');</script>";
+    header("Location: not_logged.php");
+//
+}
+?>
 <html>
 	<head>
 	
@@ -24,12 +36,12 @@
         <nav>
                 <label class="logo">Party Planner</label>
                 <ul>
-                     <li><a href="home.html">Home</a></li>
-					<li><a href="HowItWorks.html">HowItWorks</a></li>
-					<li><a href="Pricing.html">Pricing</a></li>
+                     <li><a href="home.php">Home</a></li>
+					<li><a href="HowItWorks.php">HowItWorks</a></li>
+					<li><a href="Pricing.php">Pricing</a></li>
 					<li><a href="event_form.php">Event Form</a></li>
 					<li><a href="contact.php">contact</a></li>
-                    <li> <a href="login.php"> Logout</a></li>
+                    <li> <a href="logout.php"> Logout</a></li>
                    
                 </ul>
         </nav>

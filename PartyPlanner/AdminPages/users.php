@@ -1,22 +1,17 @@
 <?php require_once('../connect.php'); ?>
+
 <!DOCTYPE html>
 <html>
 <?php
-$sql = "SELECT * FROM messages";
+$sql = "SELECT * FROM registration";
 mysqli_query($connection, $sql);
 $result = mysqli_query($connection,$sql);
 
-if($result){
-//echo "Sucessfull";
-}
-else{
-echo"failed";	
-}
-?> 
- 
+?>
+    
     <head>
         <meta charset="utf-8">
-        <title> View Messages - PartyPlanner.com </title>
+        <title> Users - PartyPlanner.com </title>
         <link rel="stylesheet" href="../css/view.css">
         <link rel="stylesheet" href="../css/nav.css">
     </head>
@@ -33,29 +28,37 @@ echo"failed";
                 </ul>
         </nav>
         <div class="header">
-            <h2>Messages by Users</h2>
+            <h2>Registered Users</h2>
         </div>
         <form>
         <div class="tab">
         <table border=1 align ="center" bgcolor="white">
             <tr bgcolor="yellow">
-                <td>Name of the Sender</td>
-                <td>Subject</td>
-                <td>Message sent by the sender</td>
-                <td>Delete</td>
+                <td>Username</td>
+                <td>Name</td>
+                <td>Email</td>
+                <td>Password</td>
+                <td>Address</td>
+                <td>Contact Number</td>
+                <td>Update</td>
+                <td>delete</td>
             </tr>
             <?php
             while($row=mysqli_fetch_assoc($result)){
             ?>
             <tr>
-                <td><?php echo $row['yname'] ?></td>
-			     <td><?php echo $row['subject'] ?></td>
-			     <td><?php echo $row['message'] ?></td>
-			     <?php echo "<td><a href ='delete_msg.php?yname=".$row['yname']." && subject=".$row['subject']."'> Delete </a> </td>"?>
+                 <td><?php echo $row['username'] ?></td>
+			     <td><?php echo $row['name'] ?></td>
+			     <td><?php echo $row['email'] ?></td>
+                <td><?php echo $row['password'] ?></td>
+                <td><?php echo $row['address'] ?></td>
+                <td><?php echo $row['tp'] ?></td>
+                <?php echo "<td><a href =update_users.php?username='".$row['username']."' > update </a> </td>"?>
+			<?php echo "<td><a href =delete_user.php?username='".$row['username']."' > delete </a> </td>"?>
             </tr>
             <?php
             }
-            ?>                         
+            ?>
         </table>
         </div>
         </form>

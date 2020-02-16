@@ -10,10 +10,10 @@
 <nav>
                 <label class="logo">Party Planner</label>
                 <ul>
-                    <li><a href="home.html">Admin Home</a></li>
+                    <li><a href="adminHome.php">Admin Home</a></li>
 					<li><a href=event_view.php>New Events</a></li>
 					<li><a href="message_view.php">Messages</a></li>
-					<li><a href="event_form.php">Event Form</a></li>
+					<li><a href="users.php">Users</a></li>
                     <li> <a href="../login.php"> Logout</a></li>
                    
                 </ul>
