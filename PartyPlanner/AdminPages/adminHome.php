@@ -1,3 +1,17 @@
+<?php require_once('../connect.php'); ?>
+<?php
+session_start();
+if (! empty($_SESSION['logged_in']))
+{
+}
+else
+{
+    
+//    echo "<script>alert('Please login to continue');</script>";
+    header("Location: ../not_logged.php");
+//
+}
+?>
 <html>
 <head>
         <meta charset="utf-8">
@@ -14,7 +28,7 @@
 					<li><a href=event_view.php>New Events</a></li>
 					<li><a href="message_view.php">Messages</a></li>
 					<li><a href="users.php">Users</a></li>
-                    <li> <a href="../login.php"> Logout</a></li>
+                    <li> <a href="../logout.php"> Logout</a></li>
                    
                 </ul>
 </nav>

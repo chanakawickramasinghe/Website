@@ -170,7 +170,7 @@ else
 				<td colspan="2">
 					<div class="input-group">
                     <center>
-                        <button type="submit" class="btn" name="submit">Register</button>
+                        <button type="submit" class="btn" name="submit">Create Event</button>
 					       &nbsp;&nbsp;
 					       <button type="reset" class="btn" name="cancel_btn"> Cancel </button>
 					
@@ -202,7 +202,7 @@ if(isset($_POST['submit'])) {
 
     $num = mysqli_num_rows($result);
     
-    $reg="INSERT INTO events(event_name, event_type, package, venue, date, start_time, end_time, num) VALUES('".$_POST['event_name']."','".$_POST['event_type']."','".$_POST['package']."','".$_POST['venue']."','".$_POST['date']."','".$_POST['start_time']."','".$_POST['end_time']."','".$_POST['num']."');";
+    $reg="INSERT INTO events(username,event_name, event_type, package, venue, date, start_time, end_time, num) VALUES('".$_SESSION["username"]."','".$_POST['event_name']."','".$_POST['event_type']."','".$_POST['package']."','".$_POST['venue']."','".$_POST['date']."','".$_POST['start_time']."','".$_POST['end_time']."','".$_POST['num']."');";
     
     if(mysqli_query($connection , $reg) === TRUE) {
             echo "<script>alert('Event details sent, Our agent will contact you within a short time.');</script>";

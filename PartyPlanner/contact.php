@@ -42,8 +42,8 @@ else
 			</p> <br>
         
 		<div class="input-group">
-			<label> Subject </label>
-			<input type="text" name="subject" size="55"  placeholder="Enter Your Email">
+			<label> Subject<font color="red">*</font> </label>
+			<input type="text" name="subject" size="55"  placeholder="Enter the Subject">
 		</div>
 		<div class="input-group">
 			<label> Your message<font color="red">*</font> </label>

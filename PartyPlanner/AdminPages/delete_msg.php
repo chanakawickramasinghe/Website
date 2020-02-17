@@ -1,12 +1,14 @@
 <?php require_once('../connect.php'); ?>
 
 <?php
-if(isset($_GET['username'] && $_GET['subject'])){
-$sql = "DELETE FROM registration WHERE username = '".$_GET['username']." AND subject= ".$_GET['subject']."';";
-mysqli_query($connection, $sql);
+if(isset($_GET['id'])){
+$sql = "DELETE FROM messages WHERE id = ".$_GET['id'];
+
 $result = mysqli_query($connection,$sql);
+    
 if($result){
-//echo "Sucessfull";
+//    echo "Sucessfull";
+//    echo "<script> confirm('are you sure want to delete') </script>";
 }
 else{
 
