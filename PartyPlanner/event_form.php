@@ -206,12 +206,12 @@ if(isset($_POST['submit'])) {
     
     if(mysqli_query($connection , $reg) === TRUE) {
             echo "<script>alert('Event details sent, Our agent will contact you within a short time.');</script>";
-            header('Location:contact.php');
+            header('Location:event_form.php');
             exit(); 
         }
         else{
             echo "<script>alert('Send failed, please retry.');</script>";
-            header('Location:contact.php');
+            header('Location:event_form.php');
             exit();
         }
 }

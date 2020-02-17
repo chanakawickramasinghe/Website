@@ -76,7 +76,7 @@ if(isset($_POST['submit'])) {
         }
         else{
             $message = base64_encode(urlencode("SQL Error while Registering"));
-            header('Location:login.php?msg=' . $message);
+            header('Location:register.php?msg=' . $message);
             exit();
         }
     }

@@ -3,7 +3,7 @@
 <html>
 <?php
 $sql = "SELECT * FROM events";
-mysqli_query($connection, $sql);
+
 $result = mysqli_query($connection,$sql);
 
 if($result){
