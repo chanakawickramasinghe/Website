@@ -45,6 +45,7 @@ $result = mysqli_query($connection,$sql);
         </div>
         <form>
         <div class="tab">
+        <center>
         <table border=1 align ="center" bgcolor="white">
             <tr bgcolor="yellow">
                 <td>Username</td>
@@ -53,6 +54,7 @@ $result = mysqli_query($connection,$sql);
                 <td>Password</td>
                 <td>Address</td>
                 <td>Contact Number</td>
+                <td>User Type</td>
                 <td>Update</td>
                 <td>delete</td>
             </tr>
@@ -66,6 +68,7 @@ $result = mysqli_query($connection,$sql);
                 <td><?php echo $row['password'] ?></td>
                 <td><?php echo $row['address'] ?></td>
                 <td><?php echo $row['tp'] ?></td>
+                <td><?php echo $row['user_type'] ?></td>
                 <?php echo "<td><a href =update_users.php?username='".$row['username']."' > update </a> </td>"?>
 			<?php echo "<td><a href =delete_user.php?username='".$row['username']."' > delete </a> </td>"?>
             </tr>
@@ -73,7 +76,9 @@ $result = mysqli_query($connection,$sql);
             }
             ?>
         </table>
+        </center>
         </div>
+            <p> <a href="adminReg.php">Add an Admin</a> </p>
         </form>
     </body>
 </html>

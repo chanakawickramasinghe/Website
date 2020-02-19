@@ -15,7 +15,7 @@ else
 <!DOCTYPE html>
 <html>
 <?php
-$sql = "SELECT * FROM events";
+$sql = "SELECT * FROM events ORDER BY event_id DESC";
 
 $result = mysqli_query($connection,$sql);
 
@@ -73,7 +73,7 @@ echo"failed";
                 <td><?php echo $row['event_id'] ?></td>
                 <td><?php echo $row['username'] ?></td>
                 <td><?php echo $row['event_name'] ?></td>
-			    <td><?php echo $row['event_name'] ?></td>
+			    <td><?php echo $row['event_type'] ?></td>
 			    <td><?php echo $row['package'] ?></td>
                 <td><?php echo $row['venue'] ?></td>
                 <td><?php echo $row['date'] ?></td>

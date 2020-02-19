@@ -21,9 +21,14 @@
         $_SESSION['logged_in'] = true;
         while($userRow = mysqli_fetch_assoc($result)){
             $_SESSION["username"] = $userRow['username'];
+            $_SESSION["user_type"] = $userRow['user_type'];
         }
-        
-        header("Location: home.php");
+        if (($_SESSION['user_type'] == 1)) {
+            header("Location: AdminPages/adminHome.php");
+        }
+        else{
+            header("Location: home.php");
+        }  
       }
       else {
         echo "<script>alert('Username and Password does not match');</script>";

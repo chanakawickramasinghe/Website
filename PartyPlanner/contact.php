@@ -10,7 +10,7 @@ else
 //    echo "<script>alert('Please login to continue');</script>";
     header("Location: not_logged.php");
 //
-}
+} 
 ?>
 <html>
     <head>

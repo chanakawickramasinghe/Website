@@ -15,7 +15,7 @@ else
 <!DOCTYPE html>
 <html>
 <?php
-$sql = "SELECT * FROM messages";
+$sql = "SELECT * FROM messages ORDER BY id DESC";
 mysqli_query($connection, $sql);
 $result = mysqli_query($connection,$sql);
 
